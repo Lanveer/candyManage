@@ -1,0 +1,47 @@
+<div id="content">
+
+<h1 class="xcx-title">添加背景图：</h1>
+
+<article class="col-sm-12 col-md-12 col-lg-12 hidden-xs xcx-tips">
+    <div class="explanation m-b-10 m-t-15">
+        <div class="title">
+            <i class="arrow-icon explain-checkZoom" title="点击此处展开或收起"></i>
+            <i class="fa fa-bullhorn"></i>
+            <h4 class="explain-checkZoom cur-p">温馨提示</h4>
+        </div>
+        <ul class="explain-panel">
+            <li>
+                <span>当您需要添加栏目时点击右上角的添加栏目按钮即可添加新的关于我们栏目信息</span>
+            </li>
+            <li>
+                <span>你需要修改栏目信息时点击对应的栏目列表编辑即可，栏目列表可以添加或者删除，公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+            <li>
+                <span>公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+        </ul>
+    </div>
+</article>
+
+<h2 class="xcx-title2">新增展馆管理</h2>
+
+<form action="post" class="form-control xcx-commom-form">
+    <div class="xcx-hotel-left">
+        <label><span>类型:</span>
+            <input style="margin-left: 20px;" ng-model="Background.type" type="radio" value="1" name="type" />酒店
+            <input ng-model="Background.type" type="radio" value="2" name="type" />展馆
+        </label>
+        <label><span>酒店数量:</span> <input type="number" ng-model="Background.hotel_num" class="form-control xcx-title-input" placeholder="请输入酒店数量"/></label>
+        <label><span>分组:</span> <input type="text"  ng-model="Background.group_name" class="form-control xcx-title-input" placeholder="请输入酒店分组"/></label>
+    </div>
+    <div class="xcx-hotel-right">
+        <label><span>展馆图片:</span></label>
+        <div class="xcx-hotel-img-box">
+            <img ngf-thumbnail="backImage||Background.back_image"  alt=""/>
+        </div>
+        <span class="xcx-hotel-img-upload-box">上传 <input type="file"  ngf-select="chooseFile($file)"  class="xcx-hotel-img-upload"/></span>
+    </div>
+    <button type="button" ng-click="submitForm()" class="xcx-submit-hotel btn btn-primary" ng-disabled="">保存</button>
+
+</form>
+</div>

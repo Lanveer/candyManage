@@ -1,0 +1,509 @@
+/*更改公用样式开始*/
+
+/*更改公用样式结束*/
+
+/*分类管理开始*/
+body{font-family: "microsoft yahei"!important;}
+.xcx-title{
+    font-size: 16px;border-bottom: solid 2px #58B4FF;
+    padding-bottom: 10px;font-family: "microsoft yahei";
+    width: 97%;margin:20px auto;
+}
+.xcx-title2{
+    float: left;font-size: 14px;color: #282828;margin-left: 1%;font-family: "microsoft yahei";}
+.xcx-title2 span{font-size: 12px;color:#333;
+    }
+.esp{
+    color:#42AAFF!important;
+    font-weight:bold;
+    margin:0 2px 0 2px;
+}
+
+.xcx-add{
+float: right;margin-right: 1%;
+}
+.xcx-classify-table{
+    width: 98%;height: auto;overflow: hidden;
+    margin: 20px auto;
+    border: 1px solid #eee;
+}
+.xcx-table-th{
+    height: 40px;text-align: center;border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+.xcx-table-tr{
+    height: 70px;text-align: center;border-bottom: 1px solid #eee;
+}
+.xcx-index{
+    width: 80px;
+}
+.xcx-modify{
+    width: 60px;height: 30px;
+}
+
+.xcx-delete{
+    width: 60px;height: 30px;margin-left: 20px;
+}
+/*分类管理结束*/
+
+/*新增分类开始*/
+.xcx-add-form{
+    width: 98%;height: 150px;overflow: hidden;margin: 20px auto;
+}
+
+
+.xcx-add-form label {
+    font-size: 14px;font-weight: normal;margin: 30px 0 30px 30px;
+}
+
+.xcx-add-classify{
+    width:260px;height: 40px;margin-left: 15px;
+}
+
+.xcx-submit{
+    width: 100px;height: 40px;outline: none;border: none;margin-left: 15px;
+}
+/*新增分类结束*/
+
+
+/*轮播图管理开始*/
+
+.xcx-lunbo-img{
+    width: 100px;height: 50px;
+}
+/*轮播图管理结束*/
+
+
+/*新增轮播图开始*/
+.xcx-add-lunbo-form{
+    width: 98%;height: auto;overflow: hidden;padding: 20px 0 20px 30px;margin: 20px auto;
+}
+.xcx-add-lunbo-form label{ font-size: 14px;font-weight: normal;}
+
+
+
+.xcx-add-lunbo-form ul>li{
+    width: 500px;height: auto;overflow: hidden;
+    clear: both;
+}
+
+.xcx-add-lunbo-form ul>li span{
+    width: 100px;height: 30px;
+    font-size:14px;display: block;
+    float: left;
+    margin-bottom: 20px;
+}
+.xcx-add-lunbo-form ul>li>div {
+    width: 400px;height: auto;
+    float: right;
+}
+
+.xcx-add-lunbo-form ul>li>div select{
+    width: 300px;height:30px;
+}
+
+
+.xcx-add-lunbo-form ul>li>div textarea{
+    width: 300px;height:150px;
+}
+.xcx-add-lunbo-form ul>li>div input{
+    width: 300px;height:30px;
+}
+.xcx-lunbo-box{
+    float: left;
+    width: 100px;height: 100px;
+    border: 1px solid #ccc;
+    margin-left: 0px;
+}
+.xcx-lunbo-box img{
+    width: 100%;height: 100%;
+}
+.xcx-lunbo-btn{
+    clear: both;;margin-top: 20px;
+    width: 100px;height:30px;
+    display: block;
+    margin-left: 0px;
+    background:dodgerblue;
+    color: #fff;
+    text-align: center;line-height: 30px;
+    position: relative;
+}
+.xcx-add-lunbo-submit{
+    margin: 20px 0 0 100px;
+}
+
+
+/*新增轮播图结束*/
+
+
+/*文章管理开始*/
+.xcx-search{
+    height: 40px;margin-left: 5px;
+    float: left;border: none;width: 350px;overflow: hidden;margin-bottom: 10px;
+}
+
+.xcx-search label input{float: left;width: 200px;}
+
+.xcx-search label button{
+    float: right;
+    width: 80px;height: 30px;
+    margin-left: 10px;
+}
+.xcx-article-add{}
+
+
+.xcx-add-article-form select{margin-left: 20px;}
+
+/*文章管理的弹窗页面*/
+.modal-body{
+    height:auto;
+    overflow: hidden;
+}
+
+.modal-footer {
+     padding: 12px;!important;
+     margin:10px auto 0;!important;
+    border-top: 1px solid #E5E5E5;
+
+}
+/*文章管理的弹窗页面*/
+
+
+
+/*文章管理结束*/
+
+/*新增文章开始*/
+.xcx-commom-form{
+    width: 97%;
+    margin-left: 10px;
+    height: auto;overflow: hidden;
+    padding: 20px 0 20px 30px;margin: 20px auto;
+}
+
+.xcx-commom-form label{
+    display: block;
+    overflow: hidden;margin-bottom: 10px;
+    height:auto;font-weight: normal;font-size: 14px;
+}
+.xcx-commom-form span{float: left;line-height: 30px;width: 80px;}
+.xcx-commom-form .xcx-title-input{width: 250px;height: 30px;
+    float: left;margin-left: 20px}
+.xcx-commom-form label select{width: 250px;height: 30px;
+    float: left;margin-left: 20px;}
+
+
+.xcx-time{
+    width: 250px!important;
+    margin-left: 10px!important;
+}
+.input-group-addon{position: relative;width: 30px;height: 30px;}
+.input-group-addon span{
+    line-height: 14px;position: absolute;right: 7px;top: 7px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.xcx-face{
+    width: 100px;height: 100px;
+    position: relative;
+    float: left;margin-left: 15px;
+    background-color: #eee;
+    text-align: center;
+    line-height: 100px;
+    margin-bottom: 20px;
+}
+.xcx-face img{
+    width: 100%;height: 100%;display: none;
+}
+.xcx-face-upload{
+   width: 100px;height:100px;
+    position: absolute;top:0;left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.xcx-content-box{
+    width: 80%;float: left;
+height: auto;margin-left: 10px;
+    overflow: hidden;
+
+}
+.xcx-clear{ clear: both;}
+.xcx-right-box{margin-left: 20px;}
+.xcx-text-model{
+    width: 40%;height: 200px;
+    border: 1px solid  #eee;
+    display: none;
+}
+.xcx-large-img-upload{
+    width: 100px;height: 100px;
+     position : relative;
+    border: 1px solid #ccc;
+}
+.xcx-large-img-upload img{width: 100%;height: 100%}
+.xcx-upload-btn{
+    width: 100px;height: 30px;
+    background: #eee;
+    text-align: center;line-height: 30px;font-size: 14px;
+    position: relative;margin-top: 10px;cursor: pointer;z-index: 333;
+}
+.xcx-upload{
+    width: 100px;height: 30px;position: absolute;top: 0;
+    opacity:0;cursor: pointer;z-index: 22;
+}
+
+#xcx-text-model{display: none}
+#xcx-large-model{display: none;}
+.xcx-img-text-model{
+    overflow: hidden;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+.xcx-mix>li{
+    position: relative;width: 50%;
+    height: auto;overflow: hidden;
+}
+
+.xcx-mix-img{
+    width: 100px;height: 100px;
+    border: 1px solid #ccc;
+}
+.xcx-mix-img img{width: 100%;height: 100%;}
+
+.xcx-mix-btn{
+    width: 100px;height: 30px;position: relative;margin: 10px 0 10px 0;
+    background: #eee;text-align: center;line-height: 30px;font-size: 14px;
+    cursor: pointer;
+}
+
+.xcx-mix-btn input{width: 100px;height: 30px;position: absolute;top: 0;opacity: 0;cursor: pointer;}
+.xcx-mix-txt{width:60%;height: 100px;}
+
+.xcx-submit-article{
+    width: 100px;height: 30px;
+    display: block;margin: auto;
+}
+
+
+.xcx-add-btn{
+    display: block;background:#275b89;color: #fff;text-align: center;
+ width: 80px;height: 30px;font-size: 14px;line-height: 30px;cursor: pointer;
+}
+
+.xcx-mix > li{
+    /*float: left;*/
+}
+
+/*新增文章结束*/
+
+
+/*酒店管理开始*/
+.xcx-edit-td{
+    width: 160px;
+}
+.xcx-hotel-logo{
+    width: 80px;height: 50px;
+}
+
+.xcx-hotel-logo img{
+    width: 80px;height: 50px;
+}
+.xcx-hotel-left{
+    width: 45%;height: auto;
+    overflow: hidden;float: left;
+}
+.xcx-hotel-right{
+    width: 50%;height: 300px;
+    float: left;
+}
+
+.xcx-hotel-des{
+    width: 250px;height: 100px!important;
+    float: left;margin-left: 20px;
+}
+.xcx-hotel-right label{float: left}
+.xcx-hotel-img-box{
+    float: left;
+    width: 100px;height: 100px;
+    border: 1px solid #ccc;
+    margin-left: 20px;
+}
+.xcx-hotel-img-box img{
+    width: 100px;height: 100px;
+}
+.xcx-hotel-img-upload-box{
+    clear: both;margin-left: 100px;margin-top: 20px;
+    width: 100px;height:30px;
+    display: block;
+    background:dodgerblue;
+    color: #fff;
+    text-align: center;line-height: 30px;
+    position: relative;
+}
+.xcx-hotel-img-upload{
+    width: 100px;height: 30px;position: absolute;top: 0;
+    opacity: 0;
+}
+.xcx-submit-hotel{
+    width: 100px;height: 30px;
+    display: block;margin: 20px auto;
+}
+
+
+.xcx-add-select select{margin-left: 20px!important;}
+
+.xcx-add-zhanwei-text{
+    width: 250px;height: 100px;border: 1px solid #ccc;margin-left: 20px;
+}
+.xcx-add-zhanwei-upload{
+    clear: both;margin-left: 100px;margin-top: 20px;
+    width: 100px;height:30px;
+    display: block;
+    background:dodgerblue;
+    color: #fff;
+    text-align: center;line-height: 30px;
+    position: relative;
+}
+
+.xcx-first-rank-tags{
+    width: 80%;
+    float: left;
+}
+
+.xcx-first-rank-tags label{
+    float: left;;margin-left: 15px;
+    margin-top: 10px;
+}
+
+.xcx-tag-box{
+    width: auto;height: auto;overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.xcx-tag-box label{
+    margin-right: 15px;float: left;padding-top: 5px;
+}
+
+/*酒店管理结束*/
+
+
+
+/*日程管理开始*/
+.xcx-add-date-radio input{
+    margin-left: 20px;
+}
+
+/*日程管理结束*/
+
+
+
+
+
+/*用户管理开始*/
+.xcx-user-mg-user{
+    width: 40px;height: 40px;
+}
+.xcx-date-first-step{
+    width: 100%;height: auto;overflow: hidden;
+    /*display: none;*/
+}
+
+.xcx-date-next-step{
+    display: none;
+    clear: both;
+    width: 100%;height: auto;overflow: hidden;
+}
+.xcx-next{
+    clear: both;margin-left: 100px;margin-top: 20px;
+    width: 100px;height:30px;
+    display: block;
+    background:dodgerblue;
+    color: #fff;
+    text-align: center;line-height: 30px;
+    cursor: pointer;
+}
+.xcx-user-more-info span{margin-right: 10px;}
+.xcx-user-mg-user img{width: 40px;height: 40px;}
+/*用户管理结束*/
+
+
+/*日程管理新增开始*/
+
+.xcx-date-search-form{
+    height: auto;
+    margin-left: 10px;
+    float: left;border: none;
+    width: auto;overflow: hidden;margin-bottom: 10px;
+}
+.xcx-date-search-form select{
+    width: 150px;height: 32px;
+    outline: none;
+    border: 1px solid #dedede;
+    color: #999
+}
+.xcx-date-search-form select option{color: #999}
+.xcx-date-search-form button{
+    width: 80px;
+    height: 30px;
+    margin-left: 10px;
+    border: none;
+}
+/*日程管理新增结束*/
+
+/*蒙版开始*/
+.masking{
+    width:100%;
+    height:100%;
+    background: #000;
+    opacity:.8;
+    position: absolute;
+    top:0;
+    z-index:222;
+    /*display: none;*/
+}
+
+.xcx-mask{
+    width: 800px;
+    z-index:333;
+    background: #fff;
+    height: 400px;position: fixed;
+    left:50%;margin-left: -400px;
+    top:20%;
+    /*display: none;*/
+}
+
+.xcx-mask-title{
+    font-size: 16px;
+    color: #282828;
+    text-align: center;
+    margin-top: 15px;
+    padding-bottom:15px;
+    border-bottom: 1px solid #ccc;
+}
+
+.xcx-mask-detail{
+    font-size: 14px;
+    color: #282828;
+    line-height:160%;
+    padding:10px 20px 10px 20px;
+}
+.xcx-mask-footer{
+    width:100%;
+    height:60px;
+    position: absolute;
+    bottom:0;
+    border-top: 1px solid #ccc;
+}
+.xcx-mask-footer button{
+    float: right;
+    width:60px;
+    height:30px;
+    margin:15px 20px 15px 0;
+}
+
+/*蒙版结束*/
+
+
+
+

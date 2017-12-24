@@ -1,0 +1,46 @@
+<div id="content">
+     <h1 class="xcx-title">分类管理：</h1>
+
+     <article class="col-sm-12 col-md-12 col-lg-12 hidden-xs xcx-tips">
+         <div class="explanation m-b-10 m-t-15">
+             <div class="title">
+                 <i class="arrow-icon explain-checkZoom" title="点击此处展开或收起"></i>
+                 <i class="fa fa-bullhorn"></i>
+                 <h4 class="explain-checkZoom cur-p">温馨提示</h4>
+             </div>
+             <ul class="explain-panel">
+                 <li>
+                     <span>当您需要添加栏目时点击右上角的添加栏目按钮即可添加新的关于我们栏目信息</span>
+                 </li>
+                 <li>
+                     <span>你需要修改栏目信息时点击对应的栏目列表编辑即可，栏目列表可以添加或者删除，公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+                 </li>
+                 <li>
+                     <span>公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+                 </li>
+             </ul>
+         </div>
+     </article>
+
+
+    <h2 class="xcx-title2">商品分类管理<span>(共有<span>{{totalNum}}</span>条记录)</span></h2>
+     <a href="" class="btn btn-primary xcx-add" ui-sref="app.weixin.addFenlei">新增</a>
+    <table class="xcx-classify-table table-responsive table-hover ">
+        <tr class="xcx-table-th">
+            <td class="xcx-index">序号</td>
+            <td>分类管理</td>
+            <td>编辑</td>
+        </tr>
+
+        <tr class="xcx-table-tr" ng-repeat="item in fenleiData">
+            <td>{{$index+1}}</td>
+            <td>{{item.category}}</td>
+            <td>
+                <button class="btn-default xcx-modify" ui-sref="app.weixin.editFenlei({id:item.id})">修改</button>
+                <button class="btn-default xcx-delete" ng-click="deleteFenlei(item,$index)">删除</button>
+            </td>
+        </tr>
+
+    </table>
+
+</div>

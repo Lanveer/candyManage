@@ -1,0 +1,73 @@
+<div id="content">
+    <!--头部开始-->
+    <div class="row header-row">
+        <h2 class="xcx-title2">展位列表 &nbsp;&nbsp;<span>(共有<span class="esp" ng-bind="bigTotalItems"></span>条记录)</span></h2>
+        <div>
+        <a href="" class="btn btn-primary xcx-add" ui-sref="app.tjh.zhanweiAdd">新增</a>
+        <div href="" class="btn btn-primary xcx-add importFile" ng-click="HotelDataImport" ngf-select="chooseFile($file,2)">
+        导入文件: <input class="uploafFile" type="file">
+        </div>
+        </div>
+    </div>
+
+    <!--表单开始-->
+
+    <form action="" class="xcx-search form-control" name="search">
+        <label> <input type="text" class="form-control" ng-model="search.keywords"/>
+            <!--<input type="submit"value=""/>-->
+            <button type="button" ng-click="chaxun()">查询</button>
+        </label>
+    </form>
+    <!--表单结束-->
+
+    <!--头部结束-->
+
+    <!--内容开始-->
+    <div class="row">
+        <table class="xcx-classify-table table-responsive table-hover" style="margin-top: 15px;">
+            <tr class="xcx-table-th">
+                <td class="xcx-index">序号</td>
+                <td>企业名字</td>
+                <td>场所</td>
+                <td>地址</td>
+                <td>展位号</td>
+                <td>联系人</td>
+                <td>联系方式</td>
+                <td>标签</td>
+                <td>来源</td>
+                <td>时间</td>
+                <td>编辑</td>
+            </tr>
+            <tr class="xcx-table-tr" ng-repeat="item in zhanweiData">
+                <td class="xcx-index">{{$index+1}}</td>
+                <td>{{item.company}}</td>
+                <td>{{item.exhibition.name}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.exhibition_code}}</td>
+                <td>{{item.contact}}</td>
+                <td>{{item.tel}}</td>
+                <td>
+                    <span  ng-bind="item.primary_label[0]"></span>
+                    <span  ng-bind="item.two_label[0]"></span>
+                    <span  ng-bind="item.three_label[0]"></span>
+                </td>
+                <td ng-if="item.recommended!= ''">{{item.recommended}}</td>
+                <td ng-if="item.recommended=='' ">自然</td>
+                <td>{{item.start_time.substring(0,10)}} -- {{item.end_time.replace('T','-').substring(0,16)}}</td>
+                <td class="xcx-edit-td">
+                    <button class="btn-default xcx-modify" ui-sref="app.tjh.zhanweiAdd({id:item.id})">修改</button>
+                    <button class="btn-default xcx-delete" ng-click="hotelDelete(item,$index)">删除</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <!--内容结束-->
+
+
+    <!--分页开始-->
+    <div class="row divide">
+        <uib-pagination total-items="bigTotalItems"  ng-model="currentPage" max-size="maxSize" class="pagination-sm"  items-per-page="10" ng-change="pageChanged()" boundary-links="true" force-ellipses="false"></uib-pagination>
+    </div>
+    <!--分页结束-->
+</div>

@@ -1,0 +1,72 @@
+<div id="content">
+<h1 class="xcx-title">日程管理：</h1>
+
+<article class="col-sm-12 col-md-12 col-lg-12 hidden-xs xcx-tips">
+    <div class="explanation m-b-10 m-t-15">
+        <div class="title">
+            <i class="arrow-icon explain-checkZoom" title="点击此处展开或收起"></i>
+            <i class="fa fa-bullhorn"></i>
+            <h4 class="explain-checkZoom cur-p">温馨提示</h4>
+        </div>
+        <ul class="explain-panel">
+            <li>
+                <span>当您需要添加栏目时点击右上角的添加栏目按钮即可添加新的关于我们栏目信息</span>
+            </li>
+            <li>
+                <span>你需要修改栏目信息时点击对应的栏目列表编辑即可，栏目列表可以添加或者删除，公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+            <li>
+                <span>公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+        </ul>
+    </div>
+</article>
+
+    <form action="" name="search" class="xcx-date-search-form form-control">
+        <!--<input type="text" class="form-control"/>-->
+        <label>
+            <input type="text" class="form-control" ng-model="search.theme" placeholder="请输入要查询的主题"/>
+        </label>
+        <label>
+            <select name="" ng-model="search.dateid"  ng-options="d.pageId as d.title for d in dateList">
+                <option value="">请选择日期</option>
+            </select>
+        </label>
+        <label>
+            <input type="text" class="form-control" ng-model="search.hotel" placeholder="请输入要查询的酒店"/>
+        </label>
+        <button type="button" ng-click="chaxun()">查询</button>
+    </form>
+
+    <a href="" class="btn btn-primary xcx-add"  ui-sref="app.weixin.addDateManage">新增</a>
+
+<table class="xcx-classify-table table-responsive table-hover xcx_date-manage-table">
+    <tr class="xcx-table-th">
+        <td class="xcx-index">序号</td>
+        <td>主题</td>
+        <td>日期</td>
+        <td>地址</td>
+        <td>具体时间</td>
+        <td>场所</td>
+        <td>是否热门</td>
+        <td>嘉宾</td>
+        <td>操作</td>
+    </tr>
+
+    <tr class="xcx-table-tr" ng-repeat="item in data">
+        <td>{{$index+1}}</td>
+        <td>{{item.theme}}</td>
+        <td>{{item.date}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.time}}</td>
+        <td>{{item.address}}</td>
+        <td>{{item.is_hot >0 ? yes : no}}</td>
+        <td>{{item.guest}}</td>
+        <td>
+            <button class="btn-default xcx-delete" ui-sref="app.weixin.addDateManage({id:item.id})" >修改</button>
+            <button class="btn-default xcx-delete" ng-click="dateDelete(item)">删除</button>
+        </td>
+    </tr>
+</table>
+    <uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"  items-per-page="20"  ></uib-pagination>
+</div>

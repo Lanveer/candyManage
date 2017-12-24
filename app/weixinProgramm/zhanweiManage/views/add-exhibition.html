@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增展馆</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../css/my_css.css"/>
+</head>
+<body>
+
+<h1 class="xcx-title">新增展馆管理：</h1>
+
+<article class="col-sm-12 col-md-12 col-lg-12 hidden-xs xcx-tips">
+    <div class="explanation m-b-10 m-t-15">
+        <div class="title">
+            <i class="arrow-icon explain-checkZoom" title="点击此处展开或收起"></i>
+            <i class="fa fa-bullhorn"></i>
+            <h4 class="explain-checkZoom cur-p">温馨提示</h4>
+        </div>
+        <ul class="explain-panel">
+            <li>
+                <span>当您需要添加栏目时点击右上角的添加栏目按钮即可添加新的关于我们栏目信息</span>
+            </li>
+            <li>
+                <span>你需要修改栏目信息时点击对应的栏目列表编辑即可，栏目列表可以添加或者删除，公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+            <li>
+                <span>公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+        </ul>
+    </div>
+</article>
+
+<h2 class="xcx-title2">新增展馆管理</h2>
+
+<form action="post" class="form-control xcx-commom-form">
+    <div class="xcx-exhibition-left">
+        <label><span>展馆名称:</span> <input type="text" class="form-control xcx-title-input" placeholder="请输入展馆名称" ng-model="exhibition.name"/></label>
+        <label><span>展馆地址:</span> <input type="text" class="form-control xcx-title-input" placeholder="请输入展馆地址" ng-model="exhibition.address"/></label>
+        <label><span>经度上传:</span> <input type="text" class="form-control xcx-title-input" placeholder="请输入经度" ng-model="exhibition.lng"/></label>
+        <label><span>纬度上传:</span> <input type="text" class="form-control xcx-title-input" placeholder="请输入纬度" ng-model="exhibition.lat"/></label>
+        <label><span>是否推荐:</span> <input style="margin-left:20px;" type="checkbox" ng-model="exhibition.recommend" ng-true-value="'1'" ng-false-value="'0'" name="recommend">{{exhibition.recommend=='1'? '是' :'否'}}</label>
+        <label><span>展馆电话:</span> <input type="text" class="form-control xcx-title-input" placeholder="请输入展馆电话" ng-model="exhibition.tel"/></label>
+
+        <label>
+            <span>分组</span>
+            <div>
+                <select name="" ng-model="exhibition.bgimg_id" id="category"  ng-options="cat.bgimg_id as cat.group_name for cat in category">
+                    <option value="">请选择分组</option>
+                </select>
+            </div>
+        </label>
+        <label>
+            <span>展馆介绍:</span>
+            <textarea class="form-control xcx-hotel-des" placeholder="请输入展馆介绍" ng-model="exhibition.introduce"></textarea>
+        </label>
+        <!--标签开始-->
+    </div>
+
+    <div class="xcx-hotel-right">
+        <span>轮播图</span>
+        <div>
+            <div class="xcx-hotel-img-box">
+                <img ngf-thumbnail="logo||exhibition.logo"  alt=""/>
+            </div>
+            <span class="xcx-hotel-img-upload-box" >上传 <input type="file" ngf-select="chooseFile($file)" class="xcx-hotel-img-upload" name="img"/></span>
+        </div>
+    </div>
+    <button  type="button" class="xcx-submit-hotel btn btn-primary" style="clear: both" ng-disabled="isImgUploading" ng-click="submitForm()">保存</button>
+</form>
+
+</body>
+</html>

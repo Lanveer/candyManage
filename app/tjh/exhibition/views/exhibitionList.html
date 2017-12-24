@@ -1,0 +1,67 @@
+<div id="content">
+    <!--头部开始-->
+    <div class="row header-row">
+        <h2 class="xcx-title2">展馆列表 &nbsp;&nbsp;<span>(共有<span class="esp" ng-bind="bigTotalItems"></span>条记录)</span></h2>
+        <div>
+            <a href="" class="btn btn-primary xcx-add" ui-sref="app.tjh.exhibitionAdd">新增</a>
+            <div href="" class="btn btn-primary xcx-add importFile" ng-click="exhibitionDataImport" ngf-select="chooseFile($file,2)">
+                导入文件: <input class="uploafFile" type="file">
+            </div>
+
+
+
+        </div>
+
+    </div>
+    <!--头部结束-->
+
+    <!--内容开始-->
+    <div class="row">
+        <table class="xcx-classify-table table-responsive table-hover" style="margin-top: 15px;">
+            <tr class="xcx-table-th">
+                <td class="xcx-index">序号</td>
+                <td>logo</td>
+                <td>展馆名称</td>
+                <td>地址</td>
+                <td>电话</td>
+                <td>经度</td>
+                <td>纬度</td>
+                <td>别名</td>
+                <td>是否隐藏</td>
+                <td>编辑</td>
+            </tr>
+            <tr class="xcx-table-tr" ng-repeat="item in exhibitionlData">
+                <td class="xcx-index">{{$index+1}}</td>
+                <td class="xcx-hotel-logo">
+                    <img src="{{item.logo}}" alt=""/>
+                </td>
+                <td>{{item.name}}</td>
+                <td>{{item.address}}</td>
+                <td>{{item.tel}}</td>
+                <td>{{item.lng}}</td>
+                <td>{{item.lat}}</td>
+                <td>
+                    <!--<span>{{item.primary_label}}{{item.two_label}}{{three_label}}</span>-->
+                    <span  ng-bind="item.floors_alias"></span>
+                    <!--<span  ng-bind="item.two_label[0]"></span>-->
+                    <!--<span  ng-bind="item.three_label[0]"></span>-->
+                </td>
+                <td ng-if="item.status==0">是</td>
+                <td ng-if="item.status==1">否</td>
+                <td class="xcx-edit-td">
+                    <button class="btn-default xcx-modify" ui-sref="app.tjh.exhibitionAdd({id:item.id})">修改</button>
+                    <button class="btn-default xcx-delete" ng-click="hotelDelete(item,$index)">删除</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+    <!--内容结束-->
+
+
+    <!--分页开始-->
+    <div class="row divide">
+        <uib-pagination total-items="bigTotalItems"  ng-model="currentPage" max-size="maxSize" class="pagination-sm"  items-per-page="10" ng-change="pageChanged()" boundary-links="true" force-ellipses="false"></uib-pagination>
+    </div>
+    <!--分页结束-->
+</div>

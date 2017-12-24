@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>新增展位</title>
+    <link rel="stylesheet" href="../../css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="../../css/my_css.css"/>
+</head>
+<body>
+<h1 class="xcx-title">新增展位管理：</h1>
+
+<article class="col-sm-12 col-md-12 col-lg-12 hidden-xs xcx-tips">
+    <div class="explanation m-b-10 m-t-15">
+        <div class="title">
+            <i class="arrow-icon explain-checkZoom" title="点击此处展开或收起"></i>
+            <i class="fa fa-bullhorn"></i>
+            <h4 class="explain-checkZoom cur-p">温馨提示</h4>
+        </div>
+        <ul class="explain-panel">
+            <li>
+                <span>当您需要添加栏目时点击右上角的添加栏目按钮即可添加新的关于我们栏目信息</span>
+            </li>
+            <li>
+                <span>你需要修改栏目信息时点击对应的栏目列表编辑即可，栏目列表可以添加或者删除，公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+            <li>
+                <span>公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+        </ul>
+    </div>
+</article>
+<h2 class="xcx-title2">新增展位管理</h2>
+
+<form  class="form-control xcx-commom-form">
+    <label><span>企业:</span> <input type="text" class="form-control xcx-title-input" ng-model="zhanwei.company" placeholder="请输入企业名字"/></label>
+    <label><span>联系方式:</span> <input type="text" class="form-control xcx-title-input"  ng-model="zhanwei.tel" placeholder="输入联系方式"/></label>
+    <label><span>联系人:</span> <input type="text" class="form-control xcx-title-input"  ng-model="zhanwei.contact" placeholder="输入联系人"/></label>
+    <label><span>开始时间:</span>
+        <input id="adminmodel-valid_time_format" type="text"  readonly class="form-control xcx-title-input"
+        uib-datepicker-popup="yyyy-MM-dd HH:mm:ss" ng-model="zhanwei.start_time"
+        is-open="popup1opened" datepicker-append-to-body="true"  ng-click="popup1opened = true"
+        close-text="取消" current-text="今天" clear-text="清除"
+        ng-required="true" close-text="取消" placeholder="请点击输入开始时间"/>
+
+    </label>
+    <label><span>结束时间:</span>
+        <input id="adminmodel-valid_time_format" type="text"  readonly class="form-control xcx-title-input"
+        uib-datepicker-popup="yyyy-MM-dd HH:mm:ss" ng-model="zhanwei.end_time"
+        is-open="popup2opened" datepicker-append-to-body="true" ng-click="popup2opened = true"
+        close-text="取消" current-text="今天" clear-text="清除"
+        ng-required="true" close-text="取消" placeholder="请点击输入结束时间"/>
+
+    </label>
+    <label><span>是否热门:</span> <input class="" style="margin-left: 20px;" type="checkbox"  ng-model="zhanwei.is_hot" ng-true-value="'1'" ng-false-value="'0'" placeholder="输入文章标题"/>{{zhanwei.is_hot?'是':'否'}}</label>
+
+
+    <label class="xcx-add-select">
+        <span>场所：</span>
+        <select name="" id=" " ng-model="chooseHotel" ng-change="loadBooth(chooseHotel.type)" ng-options="type as type.name for type in types" >
+            <option value="">请选择场所</option>
+        </select>
+    </label>
+
+    <label class="xcx-add-select">
+        <span>{{chooseHotel.type == 1?'楼层':'位置'}}：</span>
+        <select name="" id=""  ng-model="zhanwei.floor" ng-options="key as value for (key,value) in subTypes" >
+            <option value="">请选择楼层</option>
+        </select>
+    </label>
+
+    <label><span>展位号:</span> <input type="text" ng-model="zhanwei.exhibition_code"class="form-control xcx-title-input" placeholder="输入展位号"/></label>
+
+
+    <label><span>地址:</span> <input type="text" ng-model="zhanwei.address" class="form-control xcx-title-input" placeholder="输入地址"/></label>
+
+<!--选择时间开始-->
+<!--选择时间结束-->
+
+    <label>
+        <span>产品介绍:</span>
+        <textarea class="xcx-add-zhanwei-text" ng-model="zhanwei.product" placeholder="请输入产品介绍内容"></textarea>
+    </label>
+
+
+    <!--上传产品图片开始-->
+    <label><span>产品图片:</span>
+        <div class="xcx-hotel-img-box">
+            <img  ngf-thumbnail="image||zhanwei.img"  alt=""/>
+        </div>
+        <span class="xcx-add-zhanwei-upload">上传 <input type="file"  ngf-select="chooseFile($file)" class="xcx-hotel-img-upload"/></span>
+    </label>
+    <!--上传产品图片结束-->
+
+
+    <!--标签开始-->
+    <label>
+        <div class="xcx-tag-box">
+            <span>一级标签：</span>
+            <label ng-repeat="label in firstPrimary track by $index"><input name="primary_label" ng-model="label.checked" type="checkbox" />{{label.name}}</label>
+        </div>
+        <span>二级标签：</span>
+        <div class="xcx-tag-box">
+            <label ng-repeat="label in twoLabel track by $index"><input name="primary_label" ng-model="label.checked" type="checkbox" />{{label.name}}</label>
+        </div>
+        <span>三级标签：</span>
+        <div class="xcx-tag-box">
+            <label ng-repeat="label in threeLabel track by $index"><input name="primary_label" ng-model="label.checked" type="checkbox" />{{label.name}}</label>
+        </div>
+    </label>
+    <!--标签结束-->
+    <button ng-disabled="isImgUploading" type="button" class="xcx-submit-hotel btn btn-primary" ng-click="submitForm()">保存</button>
+
+
+
+</form>
+</body>
+</html>

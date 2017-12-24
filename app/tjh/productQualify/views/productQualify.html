@@ -1,0 +1,58 @@
+<div id="content">
+
+    <div class="row">
+        <h1 class="xcx-title">产品审核列表：</h1>
+    </div>
+    <section id="widget-grid">
+        <!--头部开始-->
+        <div class="row">
+            <h2 class="xcx-title2">产品审核列表 &nbsp;&nbsp;<span>(共有<span class="esp" ng-bind="bigTotalItems"></span>条记录)</span></h2>
+            <!--<a href="" class="btn btn-primary xcx-add" ui-sref="app.tjh.dateAdd">新增</a>-->
+        </div>
+        <!--头部结束-->
+
+        <!--内容开始-->
+        <div class="row">
+            <table class="xcx-classify-table table-responsive table-hover" style="margin-top: 15px;">
+                <tr class="xcx-table-th">
+                    <td class="xcx-index">编号</td>
+                    <td>产品</td>
+                    <td>产品图片</td>
+                    <td>香型</td>
+                    <td>度数</td>
+                    <td>产地</td>
+                    <td>净含量</td>
+                    <td>厂址</td>
+                    <td>描述</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                <tr class="xcx-table-tr" ng-repeat="item in testData">
+                    <td ng-bind="$index+1"></td>
+                    <td ng-bind="name"></td>
+                    <td> <img class="xcx-lunbo-img" src="{{item.img}}" alt=""/></td>
+                    <td ng-bind="item.type"></td>
+                    <td ng-bind="item.degree"></td>
+                    <td ng-bind="item.address"></td>
+                    <td ng-bind="item.weight"></td>
+                    <td ng-bind="item.factory"></td>
+                    <td ng-bind="item.des"></td>
+                    <td ><span class="status-success">审核通过</span></td>
+                    <td>
+                        <button class="btn-default xcx-delete" ng-click="pass(item)" >通过</button>
+                        <button class="btn-default xcx-delete" ng-click="refuse(item)">拒绝</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--内容结束-->
+
+
+        <!--分页开始-->
+        <div class="row divide">
+            <uib-pagination total-items="bigTotalItems"  ng-model="currentPage" max-size="maxSize" class="pagination-sm"  items-per-page="10" ng-change="pageChanged()" boundary-links="true" force-ellipses="false"></uib-pagination>
+        </div>
+        <!--分页结束-->
+    </section>
+
+</div>

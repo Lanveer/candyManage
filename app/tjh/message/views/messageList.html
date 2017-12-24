@@ -1,0 +1,49 @@
+<div id="content">
+
+    <div class="row">
+        <h1 class="xcx-title">消息中心列表：</h1>
+    </div>
+
+    <section id="widget-grid">
+        <!--头部开始-->
+        <div class="row">
+            <h2 class="xcx-title2">消息中心列表 &nbsp;&nbsp;<span>(共有<span class="esp" ng-bind="bigTotalItems"></span>条记录)</span></h2>
+            <a href="" class="btn btn-primary xcx-add" ui-sref="app.tjh.messageAdd">添加</a>
+        </div>
+        <!--头部结束-->
+
+        <!--内容开始-->
+        <div class="row">
+            <table class="xcx-classify-table table-responsive table-hover" style="margin-top: 15px;">
+                <tr class="xcx-table-th">
+                    <td class="xcx-index">编号</td>
+                    <td>消息类别</td>
+                    <td>创建时间</td>
+                    <td>消息内容</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                <tr class="xcx-table-tr" ng-repeat="item in data">
+                    <td ng-bind="$index+1"></td>
+                    <td ng-bind="item.label"></td>
+                    <td ng-bind="item.created_at"></td>
+                    <td ng-bind="item.content"></td>
+                    <td ng-if="item.is_read==0"><span class="status-success">已读</span></td>
+                    <td ng-if="item.is_read==1"><span class="status-success">未读</span></td>
+                    <td class="xcx-edit-td">
+                        <!--<button class="btn-default xcx-modify" ui-sref="app.tjh.messageAdd({id:item.id})">修改</button>-->
+                        <button class="btn-default xcx-delete" ng-click="delete(item,$index)">删除</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--内容结束-->
+
+
+        <!--分页开始-->
+        <div class="row divide">
+            <uib-pagination total-items="bigTotalItems"  ng-model="currentPage" max-size="maxSize" class="pagination-sm"  items-per-page="10" ng-change="pageChanged()" boundary-links="true" force-ellipses="false"></uib-pagination>
+        </div>
+        <!--分页结束-->
+    </section>
+</div>

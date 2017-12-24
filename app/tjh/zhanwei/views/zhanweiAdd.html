@@ -1,0 +1,141 @@
+<div id="content">
+
+    <div class="row">
+        <h1 class="xcx-title">展位添加：</h1>
+    </div>
+    <section id="widget-grid">
+        <div class="row">
+            <form action="" style="margin: 0 0 0 15px;padding: 0;" name="AddDate" class="form-control xcx-commom-form xcx-add-date-form" >
+
+                <div class="tjh-section">
+                    <span>公司名称：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入公司名称" value="" ng-model="AddDate.company">
+                </div>
+
+                <div class="tjh-section">
+                    <span>公司介绍：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入公司介绍" value="" ng-model="AddDate.introduce">
+                </div>
+
+
+                <div class="tjh-section">
+                    <span>选择酒店：</span>
+                    <select  class="tjh-select"  ng-model="AddDate.exhibition_hotel_id" ng-options="item.id as item.name for item in hotelList">
+                        <option value="">请选择酒店或展馆</option>
+                    </select>
+                </div>
+
+                <div class="tjh-section">
+                    <span>产品：</span>
+                    <input  type="text" class="tjh-input" placeholder="请输入产品关键词" value="" ng-model="AddDate.goods" ng-blur="test()">
+                    <select style="margin-left: 20px;"  class="tjh-select"  ng-model="AddDate.goods_code" ng-options="item.goods_code as item.goods_name for item in searChData" ng-change="getId(AddDate)">
+                        <option value="">请选择产品</option>
+                    </select>
+                </div>
+
+                <div class="tjh-section" ng-if="pro">
+                    <span>已选产品：</span>
+                    <!--<textarea  style="width: 500px;height: 150px;" ng-blur="modify()">{{products}}</textarea>-->
+                    <div class="proList">
+                        <div class="proList-item" ng-repeat="pro in proList">
+                            <div ng-bind="$index+1"></div>
+                            <p ng-bind="pro.val"></p>
+                            <span ng-click="del(pro,$index)">×</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tjh-section">
+                    <span>楼层：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入一个楼层" value="" ng-model="AddDate.floor">
+                </div>
+
+                <div class="tjh-section">
+                    <span>展位号：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入一个展位号" value="" ng-model="AddDate.exhibition_code">
+                </div>
+
+                <div class="tjh-section">
+                    <span>联系人：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入联系人" value="" ng-model="AddDate.contact">
+                </div>
+
+                <div class="tjh-section">
+                    <span>地址：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入地址" value="" ng-model="AddDate.address">
+                </div>
+
+                <div class="tjh-section">
+                    <span>电话：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入电话" value="" ng-model="AddDate.tel">
+                </div>
+                <div class="tjh-section">
+                    <span>开始时间：</span>
+                    <input  id="adminmodel-valid_time_format" type="text"  readonly class="form-control tjh-input"
+                           uib-datepicker-popup="yyyy-MM-dd HH:mm:ss" ng-model="AddDate.start_time"
+                           is-open="popup1opened" datepicker-append-to-body="true"  ng-click="popup1opened = true"
+                           close-text="取消" current-text="今天" clear-text="清除"
+                           ng-required="true" close-text="取消" placeholder="请点击输入开始时间"/>
+                </div>
+
+                <div class="tjh-section">
+                    <span>结束时间：</span>
+                    <input id="adminmodel-valid_time_format" type="text"  readonly class="form-control tjh-input"
+                           uib-datepicker-popup="yyyy-MM-dd HH:mm:ss" ng-model="AddDate.end_time"
+                           is-open="popup2opened" datepicker-append-to-body="true" ng-click="popup2opened = true"
+                           close-text="取消" current-text="今天" clear-text="清除"
+                           ng-required="true" close-text="取消" placeholder="请点击输入结束时间"/>
+                </div>
+
+                <div class="tjh-section">
+                    <span>是否热门：</span>
+                    <input type="radio"  value="1"  name="hot" ng-model="AddDate.is_hot">是
+                    <input style="margin-left: 20px;" type="radio"  value="0"  name="hot" ng-model="AddDate.is_hot">否
+                </div>
+
+                <div class="tjh-section">
+                    <span>封面图片:</span>
+                    <div class="img-box">
+                        <img  class="img-responsive" ngf-thumbnail="addLunbo.banner||modifyImg" ng-model="AddDate.modifyImg">
+                    </div>
+                    <div class="upload-img" ngf-select="chooseFile($file,-1)" name="img" >
+                        点击上传
+                        <input type="file" class="btn-primary" >
+                    </div>
+                </div>
+                <div class="tjh-section">
+                    <span>一级标签：</span>
+                    <div class="Tags">
+                        <label ng-repeat="label in firstPrimary track by $index"><input name="primary_label" ng-model="label.checked" type="checkbox" />{{label.name}}</label>
+                    </div>
+                </div>
+
+                <div class="tjh-section">
+                    <span>二级标签：</span>
+                    <div class="Tags">
+                        <label ng-repeat="label in twoLabel track by $index"><input name="primary_label" ng-model="label.checked" type="checkbox" />{{label.name}}</label>
+                    </div>
+                </div>
+
+                <div class="tjh-section">
+                    <span>三级标签：</span>
+                    <div class="Tags">
+                        <label ng-repeat="label in threeLabel track by $index"><input name="primary_label" ng-model="label.checked" type="checkbox" />{{label.name}}</label>
+                    </div>
+                </div>
+
+                <div class="tjh-section">
+                    <span>审核通过：</span>
+                    <input type="radio"  value="1"  name="pass" ng-model="AddDate.status"  checked>是
+                    <input style="margin-left: 20px;" type="radio"  value="0"  name="pass" ng-model="AddDate.status">否
+                </div>
+
+                <div class="tjh-section">
+                    <span></span>
+                    <div  ng-click="submitData()" class="submit">保存</div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>

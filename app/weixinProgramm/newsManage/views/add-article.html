@@ -1,0 +1,179 @@
+<div id="content">
+<h1 class="xcx-title">新增文章管理：</h1>
+
+<article class="col-sm-12 col-md-12 col-lg-12 hidden-xs xcx-tips">
+    <div class="explanation m-b-10 m-t-15">
+        <div class="title">
+            <i class="arrow-icon explain-checkZoom" title="点击此处展开或收起"></i>
+            <i class="fa fa-bullhorn"></i>
+            <h4 class="explain-checkZoom cur-p">温馨提示</h4>
+        </div>
+        <ul class="explain-panel">
+            <li>
+                <span>当您需要添加栏目时点击右上角的添加栏目按钮即可添加新的关于我们栏目信息</span>
+            </li>
+            <li>
+                <span>你需要修改栏目信息时点击对应的栏目列表编辑即可，栏目列表可以添加或者删除，公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+            <li>
+                <span>公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+        </ul>
+    </div>
+</article>
+<h2 class="xcx-title2">新增文章管理</h2>
+<form action="post" name="articleForm" class="form-control xcx-add-article-form xcx-commom-form">
+    <label><span>标题:</span> <input name="articleTitle" ng-model="article.name" type="text" class="form-control xcx-title-input" placeholder="输入文章标题"/></label>
+    <label><span>标签:</span> <input  name="articleTags" ng-model="article.tab" type="text" class="form-control xcx-title-input" placeholder="请输入标签"/></label>
+    <label><span>作者:</span> <input  name="articleAuthor" ng-model="article.editor" type="text" class="form-control xcx-title-input" placeholder="请输入作者"/></label>
+    <label><span>是否置顶:</span>
+
+        <label> <input type="checkbox" style="margin-left:20px;" ng-model="article.is_top" ng-true-value="'1'" ng-false-value="'0'"  name="is_top" id="1"/>{{article.is_top=='1'?'是':'否'}}</label>
+        <!--<label> <input type="c" ng-model="article.is_top" value="" name="is_top" id="2"/></label>-->
+    </label>
+
+    <label>
+        <span>类别：</span>
+        <select name="" ng-model="article.news_category_id" id="category"  ng-options="cat.id as cat.category for cat in categoryList">
+            <option value="">请选择类别</option>
+        </select>
+    </label>
+
+    <label>
+        <span>类型：</span>
+        <select name="" id="type" ng-model="article.type">
+            <option value="">请选择类别</option>
+            <option value="1">文字</option>
+            <option value="2">单图</option>
+            <option value="3">多图</option>
+            <option value="4">大图</option>
+            <option value="5">视频</option>
+        </select>
+    </label>
+
+    <!--时间选择开始-->
+    <!--<label>-->
+        <!--<span>时间：</span>-->
+            <!--<div class="input-group date form_date col-md-5" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">-->
+                <!--<input id="adminmodel-valid_time_format" type="text"  readonly class="form-control xcx-time"-->
+                       <!--uib-datepicker-popup="yyyy-MM-dd HH:mm:ss" ng-model="article.time"-->
+                       <!--is-open="popup2opened" datepicker-append-to-body="true"-->
+                       <!--close-text="取消" current-text="今天" clear-text="清除"-->
+                       <!--ng-required="true" close-text="取消"/>-->
+
+                <!--<span class="input-group-addon" ng-click="popup2opened = true;"><span class="glyphicon glyphicon-calendar"></span></span>-->
+            <!--</div>-->
+    <!--</label>-->
+    <label><span>时间:</span> <input  name="articleTags" ng-model="article.time" type="text" class="form-control xcx-title-input" placeholder="时间格式：2017-02-11 09:30"/></label>
+
+    <!--时间选择结束-->
+
+    <!--<添加封面开始>-->
+    <label class="xcx-clear " style="margin-left: 10px;">
+        <span>封面：</span>
+        <div class="xcx-content-box">
+
+            <!--大图模式开始-->
+            <div id="">
+                <div class="xcx-large-img-upload">
+                    <img ngf-thumbnail="cover||article.cover" alt=""/>
+                </div>
+                <div class="xcx-upload-btn">上传封面<input ngf-select="chooseFile($file,-1)" type="file" class="xcx-upload"/></div>
+            </div>
+            <!--大图模式结束-->
+
+        </div>
+    </label>
+    <!--</添加封面结束>-->
+
+
+    <!--正文部分开始-->
+
+    <!--文字模式-->
+     <div class="xcx-clear xcx-right-box" ng-if="article.type==1">
+            <span>文字模式：</span>
+            <div class="xcx-img-text-model">
+                <ul class="xcx-mix">
+                    <li>
+                        <textarea class="xcx-mix-txt"  ng-model="article.content1" placeholder="请输入详情文字"></textarea>
+                    </li>
+                </ul>
+
+                <span class="xcx-add-btn">添加</span>
+            </div>
+        </div>
+    <!--文字模式-->
+
+    <!--图文模式-->
+    <div class="xcx-clear xcx-right-box" ng-if="article.type==2">
+        <span>单图模式：</span>
+        <div class="xcx-img-text-model">
+            <ul class="xcx-mix">
+                <li>
+                    <div class="xcx-mix-img">
+                        <img  ngf-thumbnail="images[0]|| article.image1" alt=""/>
+                    </div>
+                    <div class="xcx-mix-btn">添加图片 <input ngf-select="chooseFile($file,0)" type="file"/></div>
+                    <textarea class="xcx-mix-txt"  ng-model="article.content1"  placeholder="请输入详情文字"></textarea>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--图文模式-->
+
+    <!--多图模式-->
+    <div class="xcx-clear xcx-right-box" ng-if="article.type==3">
+        <span>多图：</span>
+        <div class="xcx-img-text-model">
+            <ul class="xcx-mix">
+                <li>
+                    <div class="xcx-mix-img">
+                        <img  ngf-thumbnail="images[0]|| article.image1" alt=""/>
+                    </div>
+                    <div class="xcx-mix-btn">添加图片 <input ngf-select="chooseFile($file,0)" type="file"/></div>
+                    <textarea class="xcx-mix-txt"  ng-model="article.content1"  placeholder="请输入详情文字"></textarea>
+                </li>
+                <li>
+                    <div class="xcx-mix-img">
+                        <img  ngf-thumbnail="images[1]|| article.image2" alt=""/>
+                    </div>
+                    <div class="xcx-mix-btn">添加图片 <input ngf-select="chooseFile($file,1)" type="file"/></div>
+                    <textarea class="xcx-mix-txt"  ng-model="article.content2"  placeholder="请输入详情文字"></textarea>
+                </li>
+                <li>
+                    <div class="xcx-mix-img">
+                        <img  ngf-thumbnail="images[2]|| article.image3" alt=""/>
+                    </div>
+                    <div class="xcx-mix-btn">添加图片 <input ngf-select="chooseFile($file,2)" type="file"/></div>
+                    <textarea class="xcx-mix-txt"  ng-model="article.content3"  placeholder="请输入详情文字"></textarea>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--多图模式-->
+
+    <!--大图模式-->
+    <div class="xcx-clear xcx-right-box" ng-if="article.type==4">
+        <span>大图：</span>
+        <div class="xcx-img-text-model">
+            <ul class="xcx-mix">
+                <li>
+                    <div class="xcx-mix-img">
+                        <img  ngf-thumbnail="images[0]||article.image1" alt=""/>
+                    </div>
+                    <div class="xcx-mix-btn">添加图片 <input ngf-select="chooseFile($file,0)" type="file"/></div>
+                    <textarea class="xcx-mix-txt"  ng-model="article.content1"  placeholder="请输入详情文字"></textarea>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--大图模式-->
+
+
+
+    <!--正文部分结束-->
+        <button type="button" ng-disabled=" isImgUploading &&  articleForm.$invalid" ng-click="articleForm.$valid && submitForm(articleForm)" class="xcx-submit-article btn btn-primary">保存</button>
+</form>
+
+</div>

@@ -1,0 +1,124 @@
+<div id="content">
+    <div class="row">
+        <h1 class="xcx-title">资讯添加：</h1>
+    </div>
+
+    <section id="widget-grid">
+        <div class="row">
+            <form action="" style="margin: 0 0 0 15px;padding: 0;" name="bannerData" class="form-control tjh-commom-form xcx-add-date-form" >
+                <div class="tjh-section">
+                    <span>标题：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入标题" value="{{AddDate.name|| ''}}" ng-model="AddDate.name">
+                </div>
+
+                <div class="tjh-section">
+                    <span>作者：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入作者" value="{{AddDate.editor|| ''}}" ng-model="AddDate.editor">
+                </div>
+                <div class="tjh-section">
+                    <span>是否置顶：</span>
+                    <input type="radio"  value="1"  name="hot" ng-model="AddDate.is_top">是
+                    <input style="margin-left: 20px;" type="radio"  value="0"  name="hot" ng-model="AddDate.is_top">否
+                </div>
+                <div class="tjh-section">
+                    <span>选择分类：</span>
+                    <select  class="tjh-select"  ng-model="AddDate.cid" ng-options="item.cid as item.name for item in categoryList" ng-change="categoryChoose(AddDate.cid)">
+                        <option value="">请选择分类</option>
+                    </select>
+                </div>
+
+                <div class="tjh-section">
+                    <span>选择类别：</span>
+                    <select  class="tjh-select"  ng-model="AddDate.tid" ng-options="item.tid as item.name for item in TypeList" ng-change="typeChoose(AddDate.tid)" ng-disabled="noInput">
+                        <option value="">请选择类别</option>
+                    </select>
+                </div>
+                <div class="tjh-section">
+                    <span>编辑内容:</span>
+                    <div class="richText">
+                        <summernote config="options" ng-model="AddDate.content" editor="editor" editable="editable" data-on-image-upload="imageUpload(files)" ></summernote>
+                    </div>
+                </div>
+
+                <div class="tjh-section" ng-if="singleImg">
+                    <span>上传图片:</span>
+                    <div class="img-box">
+                        <img  class="img-responsive" ngf-thumbnail="addLunbo||AddDate.covers[0]" ng-model="AddDate.editImg">
+                    </div>
+                    <div class="upload-img" ngf-select="chooseFile($file,0)" name="img" >
+                        点击上传
+                        <input type="file" class="btn-primary" >
+                    </div>
+                </div>
+                <div class="tjh-section" ng-if="multImg">
+                    <span>上传图片: </span>
+                    <div class="mulImgs">
+                        <div class="mulImg">
+                            <div class="img-box">
+                                <img   class="img-responsive" ngf-thumbnail="addLunbo1||AddDate.covers[0]" ng-model="modifyImg">
+                            </div>
+                            <div class="upload-img mulImg-btn" ngf-select="chooseFile($file,1)" name="img" >
+                                点击上传1
+                                <input type="file" class="btn-primary" >
+                            </div>
+                        </div>
+
+                        <div class="mulImg">
+                            <div class="img-box">
+                                <img ng-if="addLunbo.banner!='' "  class="img-responsive" ngf-thumbnail="addLunbo2||AddDate.covers[1]" ng-model="modifyImg">
+                            </div>
+                            <div class="upload-img mulImg-btn" ngf-select="chooseFile($file,2)" name="img" >
+                                点击上传2
+                                <input type="file" class="btn-primary" >
+                            </div>
+                        </div>
+
+                        <div class="mulImg">
+                            <div class="img-box">
+                                <img ng-if="addLunbo.banner!='' "  class="img-responsive" ngf-thumbnail="addLunbo3||AddDate.covers[2]" ng-model="modifyImg">
+                            </div>
+                            <div class="upload-img mulImg-btn" ngf-select="chooseFile($file,3)" name="img" >
+                                点击上传3
+                                <input type="file" class="btn-primary" >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--视频-->
+                <div class="tjh-section" ng-if="video">
+                    <span>上传视频:</span>
+                    <div class="img-box">
+                        <video ngf-src="addLunbo4" class="img-responsive" ngf-thumbnail="addLunbo4||AddDate.covers[0]" ng-model="modifyImg"></video>
+                        <!--<img  class="img-responsive" ngf-thumbnail="addLunbo4||AddDate.covers[0]" ng-model="modifyImg">-->
+                    </div>
+                    <div class="upload-img" ngf-select="chooseFile($file,4)" name="img" >
+                        上传视频
+                        <input type="file" class="btn-primary" >
+                    </div>
+
+
+                    <!--封面图开始-->
+                    <div class="tjh-section" ng-if="video"  style="margin-left: 20px;">
+                        <span>封面图片:</span>
+                        <div class="img-box">
+                            <img  class="img-responsive" ngf-thumbnail="addLunbo5||AddDate.covers[0]" ng-model="AddDate.editImg">
+                        </div>
+                        <div class="upload-img" ngf-select="chooseFile($file,5)" name="img" >
+                            封面上传
+                            <input type="file" class="btn-primary" >
+                        </div>
+                    </div>
+                    <!--封面图结束-->
+
+                </div>
+                <!--视频-->
+
+                <div class="tjh-section">
+                    <span></span>
+                    <div  ng-click="submitData()" class="submit">提交</div>
+                </div>
+            </form>
+        </div>
+        <div class="row"></div>
+    </section>
+</div>

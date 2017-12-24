@@ -1,0 +1,47 @@
+<div id="content">
+
+    <div class="row">
+        <h1 class="xcx-title">添加消息：</h1>
+    </div>
+    <section id="widget-grid">
+        <div class="row">
+            <form action="" style="margin: 0 0 0 15px;padding: 0;" name="AddDate" class="form-control xcx-commom-form xcx-add-date-form" >
+
+                <div class="tjh-section">
+                    <span>消息类型：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入消息类型" value="" ng-model="AddDate.label">
+                </div>
+
+                <div class="tjh-section">
+                    <span>消息内容：</span>
+                    <textarea name="" id=""  class="tjh-textarea" ng-model="AddDate.message" placeholder="输入消息内容"></textarea>
+                </div>
+
+
+                <div class="tjh-section">
+                    <span>选择酒店：</span>
+                    <select  class="tjh-select"  ng-model="AddDate.hotel_id" ng-options="item.id as item.name  for item in hotelList" ng-change="hotelChoose(AddDate.hotel_id)">
+                        <option value="">请选择酒店</option>
+                    </select>
+                </div>
+
+                <div class="tjh-section">
+                    <span>选择展馆：</span>
+                    <select  class="tjh-select"  ng-model="AddDate.floors" ng-options="item.floors as item.name  for item in exhibitionlList" ng-change="exhibitionChoose(AddDate.floors)">
+                        <option value="">请选择展馆</option>
+                    </select>
+
+                    <select style="margin-left: 20px;"   class="tjh-select"  ng-model="AddDate.number" ng-options="number for number in floors">
+                        <option value="">请选择展馆号</option>
+                    </select>
+                </div>
+
+                <div class="tjh-section">
+                    <span></span>
+                    <div  ng-click="submitData()" class="submit">保存</div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+</div>

@@ -1,0 +1,55 @@
+<div id="content">
+    <div class="row">
+        <h1 class="xcx-title">资讯列表：</h1>
+    </div>
+
+
+    <section id="widget-grid">
+        <div class="row">
+            <h2 class="xcx-title2">商品分类管理 &nbsp;&nbsp;<span>(共有<span class="esp" ng-bind="bigTotalItems"></span>条记录)</span></h2>
+            <a href="" class="btn btn-primary xcx-add" ui-sref="app.tjh.newsAdd">新增</a>
+        </div>
+        <div class="row">
+            <table class="xcx-classify-table table-responsive table-hover" style="margin-top: 15px;">
+                <tr class="xcx-table-th">
+                    <td class="xcx-index">序号</td>
+                    <td>作者</td>
+                    <td>标题</td>
+                    <td>时间</td>
+                    <td>分类</td>
+                    <td>类别</td>
+                    <td>封面</td>
+                    <td>是否置顶</td>
+                    <td>编辑</td>
+                </tr>
+                <tr class="xcx-table-tr" ng-repeat=" item in bannerList">
+                    <td>{{$index+1}}</td>
+                    <td>{{item.editor}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.create_time}}</td>
+                    <td ng-if="item.category==2">展会指南</td>
+                    <td ng-if="item.category==1">展会资讯</td>
+                    <td ng-if="item.type==1">文字</td>
+                    <td ng-if="item.type==2">单图</td>
+                    <td ng-if="item.type==3">多图</td>
+                    <td ng-if="item.type==4">大图</td>
+                    <td ng-if="item.type==5">视频</td>
+                    <td ng-if="item.type==6">轮播</td>
+
+                    <td> <img class="xcx-lunbo-img" src="{{item.covers[0]}}" alt=""/></td>
+                    <td ng-if="item.is_top==0">否</td>
+                    <td ng-if="item.is_top==1">是</td>
+                    <td>
+                        <button class="btn-default xcx-modify" ui-sref="app.tjh.newsAdd({id:item.id})">修改</button>
+                        <button class="btn-default xcx-delete" ng-click="bannerDelete(item,$index)">删除</button>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+
+        <div class="row divide">
+            <uib-pagination total-items="bigTotalItems"  ng-model="currentPage" max-size="maxSize" class="pagination-sm"  items-per-page="10" ng-change="pageChanged()" boundary-links="true" force-ellipses="false"></uib-pagination>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,190 @@
+{
+  "items": [
+    {
+        "title":"小程序",
+        "icon":"home",
+        "items": [
+            {
+                "title":"新闻管理",
+                "sref": "",
+                "icon":"file-text-o",
+                "items":[
+                    {
+                        "title":"分类管理",
+                        "sref": "app.weixin.fenlei",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增分类",
+                        "sref": "app.weixin.addFenlei",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"轮播图管理",
+                        "sref": "app.weixin.lunbo",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增修改轮播图",
+                        "sref": "app.weixin.addLunbo",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"文章管理",
+                        "sref": "app.weixin.article",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增修改文章管理",
+                        "sref": "app.weixin.addArticle",
+                        "icon":"file-text-o"
+                    }
+                ]
+            },
+            {
+                "title":"展位管理",
+                "sref": "",
+                "icon":"file-text-o",
+                "items":[
+                     {
+                        "title":"酒店管理",
+                        "sref": "app.weixin.hotel",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增酒店",
+                        "sref": "app.weixin.addHotel",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"展馆管理",
+                        "sref": "app.weixin.exhibition",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增展馆",
+                        "sref": "app.weixin.addExhibition",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"展位管理",
+                        "sref": "app.weixin.zhanwei",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增展位",
+                        "sref": "app.weixin.addZhanwei",
+                        "icon":"file-text-o"
+                    },
+                    {
+                        "title":"背景图管理",
+                        "sref": "app.weixin.backgroundManage",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增背景图",
+                        "sref": "app.weixin.editBackgroundManage",
+                        "icon":"file-text-o"
+                    }
+                ]
+
+            },
+            {
+                "title":"日程管理",
+                "sref": "",
+                "icon":"file-text-o",
+                "items":[
+                    {
+                        "title":"日程管理",
+                        "sref": "app.weixin.dateManage",
+                        "icon":"file-text-o"
+                    }, {
+                        "title":"新增日程",
+                        "sref": "app.weixin.addDateManage",
+                        "icon":"file-text-o"
+                    }
+                ]
+
+            },
+            {
+                "title":"用户管理",
+                "sref": "",
+                "icon":"file-text-o",
+                "items":[
+                    {
+                        "title":"用户信息",
+                        "sref": "app.weixin.userInfo",
+                        "icon":"file-text-o"
+                    }
+                ]
+
+            }
+        ]
+
+    },
+
+
+    {
+        "title":"糖酒会",
+        "icon":"home",
+        "items": [
+            {
+                "title":"首页推荐大图",
+                "sref": "app.tjh.bannerList",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"会议日程管理",
+                "sref": "app.tjh.dateList",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"新闻资讯",
+                "sref": "app.tjh.news",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"资质审核",
+                "sref": "app.tjh.qualify",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"产品审核",
+                "sref": "app.tjh.productQualify",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"展位审核",
+                "sref": "app.tjh.zhanweiQualify",
+                "icon":"file-text-o"
+            },
+
+            {
+                "title":"信息统计",
+                "sref": "app.tjh.info",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"酒店管理",
+                "sref": "app.tjh.hotelList",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"展馆管理",
+                "sref": "app.tjh.exhibitionList",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"展位管理",
+                "sref": "app.tjh.zhanweiList",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"意见反馈",
+                "sref": "app.tjh.feedbackList",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"用户管理",
+                "sref": "app.tjh.userList",
+                "icon":"file-text-o"
+            },
+            {
+                "title":"消息中心",
+                "sref": "app.tjh.messageList",
+                "icon":"file-text-o"
+            }
+        ]
+    }
+
+  ]
+}

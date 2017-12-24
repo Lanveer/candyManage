@@ -1,0 +1,248 @@
+/*首页推荐大图*/
+#widget-grid{
+    /*overflow: hidden;*/
+}
+.tjh-section{
+    width:95%;
+    height:auto;
+    margin:auto;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    padding:15px 0 15px 0;
+}
+.Tags{
+    display: flex;
+    height:40px;
+    flex-direction:row;
+    vertical-align:middle;
+}
+.Tags>label{
+    margin-right: 10px;
+    line-height:40px;
+}
+.tjh-section>span{
+    font-size: 14px;
+    color: #333;
+    width:80px;
+}
+.upload-img{
+    display: block;
+    width:100px;
+    height:40px;
+    overflow: hidden;
+    border:none;
+    outline:none;
+    background: #1aa1c7;
+    color: #333;
+    text-align: center;
+    line-height:40px;
+    font-size: 14px;
+    cursor: pointer;
+    position: relative;
+    z-index:9;
+    margin-left: 20px;
+    border-radius: 5px;
+}
+.upload-img>input{
+    width:100%;
+    height:100%;
+    opacity:0;
+    position: absolute;
+    top:0;
+    left:0;
+    z-index:22;
+}
+.img-box{
+    width:150px;
+    height:100px;
+    border:1px solid #ddd;
+    cursor: pointer;
+    position: relative;
+}
+.img-box2{
+    width: 100px;
+    height:200px;
+}
+
+
+.img-box>img{
+    width:90%;
+    height:90%;
+    display: block;
+    margin:5%;
+}
+.richText{
+    width:80%;
+    height:auto;
+    padding-bottom:10px;
+}
+.submit{
+    width:120px;
+    height:40px;
+    background:#3CA7FF;
+    border:none;
+    outline:none;
+    font-size: 14px;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    line-height:40px;
+    cursor: pointer;
+}
+.tjh-input{
+    width:300px;
+    height:40px;
+    padding-left:10px;
+}
+.tjh-textarea{
+    width:300px;
+    height:140px;
+    padding-left:10px;
+}
+
+.tjh-select{
+    width:300px;
+    height:40px;
+    padding-left:10px;
+}
+
+.divide{
+    position: relative;
+    text-align: right;
+    padding-right:15px;
+}
+.header-row{
+    height:80px;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align:middle;
+    justify-content: space-between;
+}
+.header-row>h2{
+    /*float: left;*/
+    width:40%;
+}
+.header-row>div{
+    width:50%;
+}
+
+.importFile{
+    width:140px;
+    height:33px;
+}
+.uploafFile{
+    width:100%;
+    height:100%;
+    opacity:0;
+}
+.mulImgs{
+    width:100%;
+    height:auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction:row;
+    align-items:center;
+    vertical-align: middle;
+}
+
+.mulImg{
+    margin-right: 20px;
+}
+.mulImg-btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.status-success{
+    width:auto;
+    height:auto;
+    padding:3pt 5pt 3pt 5pt;
+    font-size: 14px;
+    background:#659265;
+    color: #fff;
+    border-radius: 2px;
+}
+.status-error{
+    background:#FF5B5B;
+}
+
+.status-wait{
+    background:#FF920B;
+}
+.tjh-commom-form{
+    width: 97%;
+    margin-left: 10px;
+    height: auto;overflow: hidden;
+    padding: 20px 0 20px 30px;margin: 20px auto;
+}
+
+
+/*产品修改*/
+.proList{
+    width: 300px;
+    height:auto;
+    overflow: hidden;
+    background: #ccc;
+}
+
+.proList-item{
+    height:30px;
+    width:100%;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    vertical-align: middle;
+    position: relative;
+    border-bottom: 1px solid #f3f3f3;
+    margin-bottom: 5px;
+}
+.proList-item:last-child{
+    border-bottom: none;
+}
+.proList-item>div{
+    width:30px;
+    height:30px;
+    font-size: 14px;
+    color: #333;
+    line-height: 30px;
+    text-align: center;
+}
+
+.proList-item>p{
+    width:250px;
+    height:30px;
+    font-size: 14px;
+    color: #333;
+    line-height:30px;
+}
+
+.proList-item>span{
+    width:30px;
+    height:30px;
+    display: block;
+    position: absolute;
+    right:0;
+    font-size: 20px;
+    color: #333;
+    text-align: center;
+    line-height:30px;
+    cursor: pointer;
+}
+
+
+/*产品修改*/
+
+
+
+/*.list{*/
+    /*width: 100%;*/
+    /*height:300px;*/
+    /*overflow: hidden;*/
+    /*border:1px solid red;*/
+    /*!*display: none;*!*/
+/*}*/
+

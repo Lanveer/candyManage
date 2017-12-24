@@ -1,0 +1,48 @@
+<div id="content">
+    <div class="row">
+        <h1 class="xcx-title">首页推荐大图：</h1>
+    </div>
+
+  <section id="widget-grid">
+      <div class="row">
+          <form action="" style="margin: 0 0 0 15px;padding: 0;height:auto;" name="bannerData" class="form-control tjh-commom-form xcx-add-date-form" >
+
+              <div class="tjh-section">
+                  <span>标题：</span>
+                  <input type="text" class="tjh-input" placeholder="请输入标题" value="{{bannerData.name|| ''}}" ng-model="bannerData.name">
+              </div>
+
+              <div class="tjh-section">
+                  <span>作者：</span>
+                  <input type="text" class="tjh-input" placeholder="请输入作者" value="{{bannerData.editor|| ''}}" ng-model="bannerData.editor">
+              </div>
+
+              <div class="tjh-section">
+                  <span>上传图片:</span>
+                  <div class="img-box">
+                      <img  class="img-responsive" ngf-thumbnail="addLunbo.banner||bannerData.covers[0]" ng-model="modifyImg">
+                  </div>
+                  <div class="upload-img" ngf-select="chooseFile($file,-1)" name="img" >
+                      点击上传
+                      <input type="file" class="btn-primary" >
+                  </div>
+              </div>
+
+
+              <div class="tjh-section">
+                  <span>编辑内容:</span>
+                  <div class="richText">
+                      <summernote config="options" ng-model="bannerData.content" editor="editor" editable="editable" data-on-image-upload="imageUpload(files)">
+                      </summernote>
+                  </div>
+              </div>
+
+              <div class="tjh-section">
+                  <span></span>
+                  <div  ng-click="submitData()" class="submit">提交</div>
+              </div>
+          </form>
+      </div>
+      <div class="row"></div>
+  </section>
+</div>

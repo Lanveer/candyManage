@@ -1,0 +1,107 @@
+<div id="content">
+<h1 class="xcx-title">添加日程：</h1>
+
+<article class="col-sm-12 col-md-12 col-lg-12 hidden-xs xcx-tips">
+    <div class="explanation m-b-10 m-t-15">
+        <div class="title">
+            <i class="arrow-icon explain-checkZoom" title="点击此处展开或收起"></i>
+            <i class="fa fa-bullhorn"></i>
+            <h4 class="explain-checkZoom cur-p">温馨提示</h4>
+        </div>
+        <ul class="explain-panel">
+            <li>
+                <span>当您需要添加栏目时点击右上角的添加栏目按钮即可添加新的关于我们栏目信息</span>
+            </li>
+            <li>
+                <span>你需要修改栏目信息时点击对应的栏目列表编辑即可，栏目列表可以添加或者删除，公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+            <li>
+                <span>公司简介为系统默认栏目不可删除，如果添加公司简介请点击栏目列表中的编辑按钮</span>
+            </li>
+        </ul>
+    </div>
+</article>
+
+<h2 class="xcx-title2">添加日程管理</h2>
+
+<form action="" name="addDataForm" class="form-control xcx-commom-form xcx-add-date-form" method="post">
+
+    <div class="">
+        <div class="xcx-hotel-left">
+        <label class="xcx-add-select">
+            <span>日期:</span>
+            <select name="" id="" ng-model="DateManage.date_id"  ng-options="d.pageId as d.title for d in dateList" >
+                <option value="">请选择日期</option>
+            </select>
+        </label>
+
+            <label>
+                <span>时间:</span>
+                <!--<uib-timepicker ng-model="DateManage.time"></uib-timepicker>-->
+                <input type="text" name="time" ng-model="DateManage.time" class="form-control xcx-title-input" placeholder="请输入时间"/>
+            </label>
+
+            <label class="xcx-add-date-radio">
+                <span>是否热门:</span>
+                <input type="checkbox"  ng-model="DateManage.is_hot" ng-true-value="'1'" ng-false-value="'0'" placeholder="输入文章标题"/>{{DateManage.is_hot?'是':'否'}}
+            </label>
+
+
+            <label>
+            <span>会议主题:</span>
+            <input type="text" name="theme" ng-model="DateManage.theme" class="form-control xcx-title-input" placeholder="请输入会议主题"/>
+        </label>
+
+        <label class="xcx-add-select">
+            <span>场所：</span>
+            <select name="" id=" " ng-model="DateManage.exhibition_hotel_id" ng-options="type.exhibition_hotel_id as type.name for type in types" >
+                <option value="">请选择场所</option>
+            </select>
+        </label>
+
+        <label>
+            <span>会议厅:</span>
+            <input name="auditoria" ng-model="DateManage.auditoria" type="text" class="form-control xcx-title-input" placeholder="请输入会议厅"/>
+        </label>
+
+        <label>
+            <span>嘉宾:</span>
+            <input name="guest" type="text" ng-model="DateManage.guest" class="form-control xcx-title-input" placeholder="请输入嘉宾，以逗号隔开"/>
+        </label>
+
+        <label>
+            <span>地址:</span>
+            <input name="address" type="text" ng-model="DateManage.address" class="form-control xcx-title-input" placeholder="请输入地址"/>
+        </label>
+
+            <div>
+                <label>
+                    <span>会议介绍:</span>
+                    <textarea name="introduce" ng-model="DateManage.introduce" class="xcx-add-zhanwei-text" placeholder="请输入会议介绍"></textarea>
+                </label>
+            </div>
+
+        </div>
+        <div class="xcx-hotel-right">
+            <label><span>封面图片:</span></label>
+            <div class="xcx-hotel-img-box">
+                <img ngf-thumbnail="image||DateManage.img"  alt=""/>
+            </div>
+            <span class="xcx-hotel-img-upload-box" >上传 <input type="file" ngf-select="chooseFile($file)" class="xcx-hotel-img-upload" name="img"/></span>
+        </div>
+        <div class="xcx-hotel-right">
+            <label><span>详情图片:</span></label>
+            <div class="xcx-hotel-img-box">
+                <img ngf-thumbnail="infoimg||DateManage.infoimg"  alt=""/>
+            </div>
+            <span class="xcx-hotel-img-upload-box" >上传 <input type="file" ngf-select="chooseFile($file,true)" class="xcx-hotel-img-upload" name="img"/></span>
+        </div>
+
+    </div>
+
+    <input type="button" ng-disabled="isImgUploading" value="提交" ng-click="submitForm()" class="xcx-submit-article btn btn-primary"/>
+
+</form>
+
+
+</div>

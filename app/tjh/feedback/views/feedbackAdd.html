@@ -1,0 +1,86 @@
+<div id="content">
+
+    <div class="row">
+        <h1 class="xcx-title">添加反馈：</h1>
+    </div>
+    <section id="widget-grid">
+        <div class="row">
+            <form action="" style="margin: 0 0 0 15px;padding: 0;" name="AddDate" class="form-control xcx-commom-form xcx-add-date-form" >
+
+                <div class="tjh-section">
+                    <span>主题：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入主题" value="" ng-model="AddDate.theme">
+                </div>
+
+                <div class="tjh-section">
+                    <span>嘉宾：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入嘉宾名字" value="" ng-model="AddDate.guest">
+                </div>
+
+                <div class="tjh-section">
+                    <span>开始时间：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入开始时间，例如12:00" value="" ng-model="AddDate.time">
+                </div>
+
+                <div class="tjh-section">
+                    <span>地址：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入地址" value="" ng-model="AddDate.address">
+                </div>
+                <div class="tjh-section">
+                    <span>会议厅：</span>
+                    <input type="text" class="tjh-input" placeholder="请输入会议厅" value="" ng-model="AddDate.auditoria">
+                </div>
+
+                <div class="tjh-section">
+                    <span>是否热门：</span>
+                    <input type="radio"  value="1"  name="hot" ng-model="AddDate.is_hot">是
+                    <input style="margin-left: 20px;" type="radio"  value="0"  name="hot" ng-model="AddDate.is_hot">否
+                </div>
+
+
+                <div class="tjh-section">
+                    <span>选择日期：</span>
+                    <select  class="tjh-select"  ng-model="AddDate.page_id" ng-options="item.pageId as item.title for item in dateList">
+                        <option value="">请选择日期</option>
+                    </select>
+                </div>
+
+                <div class="tjh-section">
+                    <span>选择场所：</span>
+                    <select  class="tjh-select"  ng-model="AddDate.exhibition_hotel_id" ng-options="item.id as item.name for item in hotelList">
+                        <option value="">请选择场所</option>
+                    </select>
+                </div>
+
+                <div class="tjh-section">
+                    <span>上传图片:</span>
+                    <div class="img-box">
+                        <img  class="img-responsive" ngf-thumbnail="addLunbo.banner||AddDate.cover" ng-model="modifyImg">
+                        <!--<img  class="img-responsive" ngf-thumbnail="addLunbo.banner||bannerData.covers " ng-model="bannerData.cover"/>-->
+                    </div>
+                    <div class="upload-img" ngf-select="chooseFile($file,-1)" name="img" >
+                        点击上传
+                        <input type="file" class="btn-primary" >
+                    </div>
+                </div>
+
+
+                <div class="tjh-section">
+                    <span>编辑内容:</span>
+                    <div class="richText">
+                        <summernote config="options" ng-model="AddDate.introduce">
+                        </summernote>
+                    </div>
+                </div>
+
+                <div class="tjh-section">
+                    <span></span>
+                    <div  ng-click="submitData()" class="submit">提交</div>
+                </div>
+                <pre>{{AddDate}}</pre>
+            </form>
+        </div>
+        <div class="row"></div>
+    </section>
+
+</div>

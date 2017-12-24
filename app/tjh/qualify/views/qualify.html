@@ -1,0 +1,67 @@
+<div id="content">
+
+    <div class="row">
+        <h1 class="xcx-title">资质审核列表：</h1>
+    </div>
+    <section id="widget-grid">
+        <!--头部开始-->
+        <div class="row">
+            <h2 class="xcx-title2">资质审核列表 &nbsp;&nbsp;<span>(共有<span class="esp" ng-bind="bigTotalItems"></span>条记录)</span></h2>
+            <!--<a href="" class="btn btn-primary xcx-add" ui-sref="app.tjh.dateAdd">新增</a>-->
+        </div>
+        <!--头部结束-->
+
+        <!--内容开始-->
+        <div class="row">
+            <table class="xcx-classify-table table-responsive table-hover" style="margin-top: 15px;">
+                <tr class="xcx-table-th">
+                    <td class="xcx-index">编号</td>
+                    <td>认证名称</td>
+                    <td>联系电话</td>
+                    <td>论坛</td>
+                    <td>申请时间</td>
+                    <td>申请域名</td>
+                    <td>状态</td>
+                    <td>操作</td>
+                </tr>
+                <tr class="xcx-table-tr">
+                    <td>12</td>
+                    <td> <img class="xcx-lunbo-img" src="http://www.jiushang.cn/data/attachment/common/8f/090644qbj0ppgpzpsjgip8.png" alt=""/></td>
+                    <td>18200232434</td>
+                    <td>经销商</td>
+                    <td>2016-12-06 10:11:38</td>
+                    <td>https://www.baidu.com</td>
+                    <td><span class="status-success">审核通过</span></td>
+                    <td>
+                        <button class="btn-default xcx-delete" ng-click="pass(item)" >通过</button>
+                        <button class="btn-default xcx-delete" ng-click="dataDelete(item)">删除</button>
+                    </td>
+                </tr>
+                <!--<tr class="xcx-table-tr" ng-repeat="item in data">-->
+                    <!--<td>{{$index+1}}</td>-->
+                    <!--<td>{{item.nick_name}}</td>-->
+                    <!--<td> <img class="xcx-lunbo-img" src="{{item.header}}" alt=""/></td>-->
+                    <!--<td>{{item.tel}}</td>-->
+                    <!--<td>{{item.create_time}}</td>-->
+                    <!--<td>{{item.name}}</td>-->
+                    <!--<td>{{item.js_uid}}</td>-->
+                    <!--<td>{{item.status}}</td>-->
+                    <!--<td>-->
+                        <!--<button class="btn-default xcx-delete" ng-click="pass(item)" >通过</button>-->
+                        <!--<button class="btn-default xcx-delete" ng-click="dateDelete(item)">删除</button>-->
+                    <!--</td>-->
+                <!--</tr>-->
+
+            </table>
+        </div>
+        <!--内容结束-->
+
+
+        <!--分页开始-->
+        <div class="row divide">
+            <uib-pagination total-items="bigTotalItems"  ng-model="currentPage" max-size="maxSize" class="pagination-sm"  items-per-page="10" ng-change="pageChanged()" boundary-links="true" force-ellipses="false"></uib-pagination>
+        </div>
+        <!--分页结束-->
+    </section>
+
+</div>
