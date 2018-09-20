@@ -1,5 +1,8 @@
 'use strict';
 
+
+
+
 angular.module('app.zhanwei')
 
 .controller('zhanweiAddCtr', function ($stateParams,$scope,$http,$state,AlertService,oss,Upload) {
